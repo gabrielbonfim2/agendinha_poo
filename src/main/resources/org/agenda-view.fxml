@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controller.AgendaController">
+
+    <top>
+        <VBox spacing="10" style="-fx-padding: 15;">
+            <Label text="Agenda de Contatos" style="-fx-font-size: 20px; -fx-font-weight: bold;" />
+
+            <GridPane hgap="10" vgap="10">
+                <Label text="Nome:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtNome" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                <Label text="Telefone:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtTelefone" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                <Label text="Email:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                <TextField fx:id="txtEmail" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                <HBox spacing="10" GridPane.rowIndex="3" GridPane.columnIndex="1">
+                    <Button text="Adicionar" onAction="#adicionar"/>
+                    <Button text="Editar" onAction="#editar"/>
+                    <Button text="Excluir" onAction="#excluir"/>
+                </HBox>
+            </GridPane>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="tabelaContatos">
+            <columns>
+                <TableColumn text="ID" fx:id="colId" prefWidth="50"/>
+                <TableColumn text="Nome" fx:id="colNome" prefWidth="150"/>
+                <TableColumn text="Telefone" fx:id="colTelefone" prefWidth="100"/>
+                <TableColumn text="Email" fx:id="colEmail" prefWidth="180"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>
